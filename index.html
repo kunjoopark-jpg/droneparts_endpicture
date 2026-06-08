@@ -2,115 +2,239 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>드론 부품 국산화 — End Picture (260531)</title>
+<title>드론 부품 국산화 — End Picture (260608)</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f6f8fb; --surface: #ffffff; --surface2: #f0f3f8; --surface3: #e6ebf2;
-  --border: #d8dee8; --border-light: #e3e8f0;
-  --text: #1a2233; --text-dim: #586377; --text-muted: #8a94a8;
-  --green: #0f9d58; --green-soft: #34c77c; --green-bg: #e6f7ee;
-  --yellow: #d97706; --yellow-soft: #f59e0b; --yellow-bg: #fff4e0;
-  --red: #dc2626; --red-soft: #ef4444; --red-bg: #fde7e7;
-  --blue: #1d6fed; --blue-soft: #3b82f6; --blue-bg: #e3edff;
-  --purple: #7c3aed; --orange: #ea580c; --accent: #5b6cff;
-  --gold: #c47e00; --gold-bright: #e8a200; --gold-bg: #fff4d6; --gold-border: #e8c870;
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --surface2: #f0f3f8;
+  --surface3: #e6ebf2;
+  --border: #d8dee8;
+  --border-light: #e3e8f0;
+
+  --text: #1a2233;
+  --text-dim: #586377;
+  --text-muted: #8a94a8;
+
+  --green: #0f9d58;          --green-soft: #34c77c;   --green-bg: #e6f7ee;
+  --yellow: #d97706;         --yellow-soft: #f59e0b;  --yellow-bg: #fff4e0;
+  --red: #dc2626;            --red-soft: #ef4444;     --red-bg: #fde7e7;
+  --blue: #1d6fed;           --blue-soft: #3b82f6;    --blue-bg: #e3edff;
+  --purple: #7c3aed;
+  --orange: #ea580c;
+  --accent: #5b6cff;
+
+  --gold: #c47e00;
+  --gold-bright: #e8a200;
+  --gold-bg: #fff4d6;
+  --gold-border: #e8c870;
 }
+
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
-  background: var(--bg); color: var(--text);
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 400; font-size: 13.5px; line-height: 1.5;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 1.5;
   padding: 30px 38px;
 }
 
-/* HEADER */
+/* ====================== HEADER ====================== */
 .header {
-  display: flex; align-items: flex-end; justify-content: space-between;
-  padding-bottom: 18px; border-bottom: 2px solid var(--border); margin-bottom: 22px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 22px;
 }
-.header-title h1 { margin: 0 0 6px 0; font-size: 26px; font-weight: 900; letter-spacing: -0.5px; }
-.header-title .subtitle { color: var(--text-dim); font-size: 13px; font-weight: 500; }
+.header-title h1 {
+  margin: 0 0 6px 0;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+.header-title .subtitle {
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 500;
+}
 .header-badge {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-  padding: 8px 14px; font-family: 'JetBrains Mono', monospace;
-  font-size: 12px; font-weight: 600; color: var(--text-dim);
-  display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
 }
 .header-badge .badge-label { color: var(--text-muted); font-size: 10px; letter-spacing: 0.5px; }
 .header-badge .badge-date { color: var(--text); font-size: 13px; font-weight: 700; }
 
-/* SUMMARY STRIP */
+/* ====================== SUMMARY STRIP ====================== */
 .summary-strip {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 12px; margin-bottom: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
 }
 .summary-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 10px; padding: 14px 16px;
-  display: flex; flex-direction: column; gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 .summary-card.total { border-left: 4px solid var(--accent); }
 .summary-card.green { border-left: 4px solid var(--green); background: linear-gradient(180deg, var(--green-bg) 0%, var(--surface) 60%); }
 .summary-card.yellow { border-left: 4px solid var(--yellow); background: linear-gradient(180deg, var(--yellow-bg) 0%, var(--surface) 60%); }
 .summary-card.red { border-left: 4px solid var(--red); background: linear-gradient(180deg, var(--red-bg) 0%, var(--surface) 60%); }
-.summary-label { font-size: 11.5px; font-weight: 700; color: var(--text-dim); letter-spacing: 0.3px; }
+
+.summary-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 0.3px;
+}
 .summary-card.total .summary-label { color: var(--accent); }
 .summary-card.green .summary-label { color: var(--green); }
 .summary-card.yellow .summary-label { color: var(--yellow); }
 .summary-card.red .summary-label { color: var(--red); }
-.summary-number { font-family: 'JetBrains Mono', monospace; font-size: 30px; font-weight: 700; line-height: 1; }
+
+.summary-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+}
 .summary-card.total .summary-number { color: var(--accent); }
 .summary-card.green .summary-number { color: var(--green); }
 .summary-card.yellow .summary-number { color: var(--yellow); }
 .summary-card.red .summary-number { color: var(--red); }
-.summary-detail { font-size: 11.5px; color: var(--text-dim); line-height: 1.4; margin-top: 2px; }
+
+.summary-detail {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  line-height: 1.4;
+  margin-top: 2px;
+}
 .summary-criteria {
-  font-size: 10.5px; color: var(--text-muted);
+  font-size: 10.5px;
+  color: var(--text-muted);
   font-family: 'JetBrains Mono', monospace;
-  border-top: 1px dashed var(--border-light); padding-top: 6px; margin-top: 4px;
+  border-top: 1px dashed var(--border-light);
+  padding-top: 6px;
+  margin-top: 4px;
 }
 
-/* MATRIX */
+/* ====================== MATRIX TABLE ====================== */
 .matrix-wrapper {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 10px; overflow: hidden; margin-bottom: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 22px;
 }
-table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+table.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
 .matrix thead th {
-  background: var(--surface2); font-weight: 800; font-size: 11.5px;
-  letter-spacing: 0.3px; color: var(--text-dim); text-align: left;
-  padding: 11px 12px; border-bottom: 1.5px solid var(--border); text-transform: uppercase;
+  background: var(--surface2);
+  font-weight: 800;
+  font-size: 11.5px;
+  letter-spacing: 0.3px;
+  color: var(--text-dim);
+  text-align: left;
+  padding: 11px 12px;
+  border-bottom: 1.5px solid var(--border);
+  text-transform: uppercase;
 }
-.matrix tbody td { padding: 11px 12px; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+.matrix tbody td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
 .matrix tbody tr:last-child td { border-bottom: none; }
-.col-cat { width: 118px; } .col-grade { width: 92px; }
-.col-review { width: 90px; } .col-conclusion { width: 240px; }
 
-.cat-cell { position: relative; font-weight: 700; padding-left: 14px !important; }
-.cat-strip { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+.col-cat { width: 118px; }
+.col-grade { width: 92px; }
+.col-review { width: 90px; }
+.col-conclusion { width: 240px; }
+
+.cat-cell {
+  position: relative;
+  font-weight: 700;
+  padding-left: 14px !important;
+}
+.cat-strip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
 .cat-strip.green { background: var(--green); }
 .cat-strip.yellow { background: var(--yellow); }
 .cat-strip.red { background: var(--red); }
 .cat-name { font-size: 13px; }
 .cat-icon { margin-right: 4px; }
 
+/* Pill (grade) */
 .pill {
-  display: inline-flex; align-items: center; gap: 4px;
-  padding: 3px 9px; border-radius: 6px;
-  font-size: 11px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
 }
 .pill.green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-soft); }
 .pill.yellow { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-soft); }
 .pill.red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-soft); }
 
-.review-cell { text-align: center; }
-.review-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--text); line-height: 1; }
+/* Under Review */
+.review-cell {
+  text-align: center;
+}
+.review-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
 .review-num.zero { color: var(--text-muted); }
-.review-label { font-size: 10px; color: var(--text-muted); letter-spacing: 0.4px; margin-top: 4px; text-transform: uppercase; }
+.review-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.4px;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
 
-.vendor-line { font-size: 12.5px; font-weight: 600; color: var(--text); font-family: 'JetBrains Mono', monospace; }
+/* Vendor entry text-based */
+.vendor-line {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+}
 .vendor-line .v-sep { color: var(--text-muted); margin: 0 4px; }
 .vendor-line .v-name { color: var(--text); }
 .vendor-line .v-stage { color: var(--text-dim); font-weight: 500; }
@@ -121,71 +245,136 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 .vendor-line .v-judgment.j25 { color: var(--orange); }
 .vendor-line .v-judgment.j0 { color: var(--red); }
 .vendor-line .v-judgment.jna { color: var(--text-muted); }
-.vendor-note { font-size: 11px; color: var(--text-dim); margin-top: 3px; line-height: 1.4; }
-.vendor-empty { color: var(--text-muted); font-size: 11.5px; font-style: italic; }
 
-.pipeline-item { font-size: 11.5px; color: var(--text-dim); margin-bottom: 3px; }
+.vendor-note {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.vendor-empty {
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-style: italic;
+}
+
+/* Other pipeline */
+.pipeline-item {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  margin-bottom: 3px;
+}
 .pipeline-item.dead { color: var(--text-muted); opacity: 0.7; text-decoration: line-through; text-decoration-color: var(--text-muted); }
+.pipeline-item.dead .v-stage { text-decoration: line-through; }
 
-.conclusion { font-size: 11.5px; color: var(--text); line-height: 1.45; }
+/* Conclusion */
+.conclusion {
+  font-size: 11.5px;
+  color: var(--text);
+  line-height: 1.45;
+}
 .conclusion .risk { color: var(--red); font-weight: 600; }
 .conclusion .next { color: var(--text-dim); }
+.conclusion .upgrade { color: var(--green); font-weight: 700; background: var(--green-bg); padding: 1px 5px; border-radius: 3px; }
 
-/* WAR */
+/* ====================== WEEKLY ACTION REVIEW ====================== */
 .war-section {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 10px; padding: 18px 22px; margin-top: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-top: 8px;
 }
 .war-header {
-  font-size: 15px; font-weight: 900; letter-spacing: -0.2px;
-  margin: 0 0 4px 0; padding-bottom: 10px; border-bottom: 1.5px solid var(--border);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  margin: 0 0 4px 0;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid var(--border);
 }
-.war-subtitle { font-size: 11.5px; color: var(--text-dim); margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
-.war-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 16px; }
-.war-block h3 { font-size: 12px; font-weight: 800; color: var(--text-dim); margin: 0 0 10px 0; letter-spacing: 0.3px; text-transform: uppercase; }
+.war-subtitle {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  margin-top: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.war-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin-top: 16px;
+}
+.war-block h3 {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-dim);
+  margin: 0 0 10px 0;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
 .war-list { list-style: none; padding: 0; margin: 0; }
 .war-list li {
-  font-size: 12px; color: var(--text);
-  padding: 7px 0; border-bottom: 1px dashed var(--border-light); line-height: 1.45;
+  font-size: 12px;
+  color: var(--text);
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--border-light);
+  line-height: 1.45;
 }
 .war-list li:last-child { border-bottom: none; }
 .war-list .tag {
-  display: inline-block; font-size: 9.5px; font-weight: 800;
-  padding: 1px 6px; border-radius: 4px; margin-right: 5px;
-  font-family: 'JetBrains Mono', monospace; letter-spacing: 0.4px; vertical-align: middle;
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.4px;
+  vertical-align: middle;
 }
 .tag.new { background: var(--blue-bg); color: var(--blue); }
 .tag.carry { background: var(--surface3); color: var(--text-dim); }
 .tag.status { background: var(--yellow-bg); color: var(--yellow); }
-.tag.dead { background: var(--red-bg); color: var(--red); opacity: 0.85; }
 .tag.schedule { background: var(--purple); color: white; }
-.war-list .date { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--text-muted); margin-right: 6px; }
+.tag.complete { background: var(--green-bg); color: var(--green); }
+.war-list .date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  margin-right: 6px;
+}
 .war-list .name { font-weight: 600; }
 .war-list .summary { color: var(--text-dim); font-size: 11px; margin-top: 2px; }
 
-/* FOOTER */
+/* ====================== FOOTER ====================== */
 .footer-note {
-  margin-top: 20px; font-size: 10.5px; color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace; text-align: center;
-  padding: 10px; border-top: 1px dashed var(--border);
+  margin-top: 20px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px dashed var(--border);
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ====================== HEADER ====================== -->
 <header class="header">
   <div class="header-title">
     <h1>🇰🇷 드론 부품 국산화 — End Picture</h1>
-    <div class="subtitle">Bone Robotics · TF Weekly Dashboard · 5월 5주차 (W22)</div>
+    <div class="subtitle">Bone Robotics · TF Weekly Dashboard · 6월 2주차 (W24)</div>
   </div>
   <div class="header-badge">
     <span class="badge-label">기준일</span>
-    <span class="badge-date">2026-05-31</span>
+    <span class="badge-date">2026-06-08</span>
   </div>
 </header>
 
-<!-- SUMMARY STRIP -->
+<!-- ====================== SUMMARY STRIP ====================== -->
 <section class="summary-strip">
   <div class="summary-card total">
     <div class="summary-label">전체 부품군</div>
@@ -195,25 +384,25 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
   </div>
   <div class="summary-card green">
     <div class="summary-label">🟢 목표 달성</div>
-    <div class="summary-number">1</div>
-    <div class="summary-detail">GPS (비스타컴 75%)</div>
+    <div class="summary-number">2</div>
+    <div class="summary-detail">GPS (비스타컴 100%) · 모터 (모터이엔지 75%)</div>
     <div class="summary-criteria">조건: Under Review ≥ 1 AND 75%+ ≥ 1</div>
   </div>
   <div class="summary-card yellow">
     <div class="summary-label">🟡 검토 진행</div>
     <div class="summary-number">6</div>
-    <div class="summary-detail">배터리 · 모터 · FC · 짐벌 · 통신 · 에어프레임 · 프롭</div>
+    <div class="summary-detail">배터리 · FC · 에어프레임 · 짐벌카메라 · 통신모듈 · 프로펠러</div>
     <div class="summary-criteria">조건: Under Review ≥ 1, but 75%+ 없음</div>
   </div>
   <div class="summary-card red">
     <div class="summary-label">🔴 Critical Gap</div>
-    <div class="summary-number">3</div>
-    <div class="summary-detail">ESC · 조종기 · (FC→🟡 전환)</div>
+    <div class="summary-number">2</div>
+    <div class="summary-detail">ESC · 조종기</div>
     <div class="summary-criteria">조건: Under Review = 0</div>
   </div>
 </section>
 
-<!-- MATRIX TABLE -->
+<!-- ====================== MATRIX TABLE ====================== -->
 <section class="matrix-wrapper">
 <table class="matrix">
 <thead>
@@ -237,66 +426,77 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     </td>
     <td><span class="pill yellow">🟡 검토</span></td>
     <td class="review-cell">
-      <div class="review-num">2</div>
+      <div class="review-num">4</div>
       <div class="review-label">컨택 업체</div>
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">Enertech</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
+        <span class="v-name">Enertech</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
       </div>
-      <div class="vendor-note">• SPB8060155V2 셀 2EA 구매 완료. Gate1 Pass / Gate2·3 Hold (Rosatom 리스크)</div>
+      <div class="vendor-note">• 6S 배터리 구매 완료 / BEI와 head-to-head 비교 예정</div>
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">BEI</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span>
+        <span class="v-name">BEI</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span>
       </div>
-      <div class="vendor-note">• 안산 방문 완료. Enertech head-to-head 셋업 중</div>
+      <div class="vendor-note">• 양산 capa 부족 / 샘플 단가 190만원</div>
     </td>
     <td>
       <div class="pipeline-item">
         <span class="vendor-line"><span class="v-name">CTNS</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span></span>
         <div class="vendor-note">• 단가 높음 — 새 견적 전까지 홀드</div>
       </div>
+      <div class="pipeline-item">
+        <span class="vendor-line"><span class="v-name">자인에너지</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span></span>
+        <div class="vendor-note">• 회신 Lost / 커넥션만 유지</div>
+      </div>
       <div class="pipeline-item dead">
-        <span class="vendor-line"><span class="v-name">자인에너지</span><span class="v-sep">|</span><span class="v-stage">부적합</span><span class="v-sep">|</span><span class="v-judgment j0">0%</span></span>
-        <div class="vendor-note">• C-rate 미달 부적합 확정</div>
+        <span class="vendor-line"><span class="v-name">E-Solution</span><span class="v-sep">|</span><span class="v-stage">종료</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span></span>
       </div>
     </td>
     <td class="conclusion">
-      Enertech vs BEI head-to-head 진행 중. <span class="next">테스트 결과가 75%+ 승급 분기점.</span>
+      Enertech vs BEI head-to-head 6/10 FFT 테스트 예정. <span class="next">75%+ 없음 — 테스트 결과가 게이트 분기점.</span>
     </td>
   </tr>
 
   <!-- 모터 -->
   <tr>
     <td class="cat-cell">
-      <span class="cat-strip yellow"></span>
+      <span class="cat-strip green"></span>
       <span class="cat-name"><span class="cat-icon">⚙️</span>모터</span>
     </td>
-    <td><span class="pill yellow">🟡 검토</span></td>
+    <td><span class="pill green">🟢 달성</span></td>
     <td class="review-cell">
       <div class="review-num">2</div>
       <div class="review-label">컨택 업체</div>
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">모터이엔지</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
+        <span class="v-name">모터이엔지</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j75">75%</span>
       </div>
-      <div class="vendor-note">• 스왈로 모터 PASS / SOMA 탑재 검증 중</div>
+      <div class="vendor-note">• 스왈로 PASS / SOMA 탑재 홀드 (기체 이슈)</div>
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">KRM</span><span class="v-sep">|</span><span class="v-stage">미팅 완료</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span>
+        <span class="v-name">KRM</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
       </div>
-      <div class="vendor-note">• Inquiry 송부 완료 / readiness 의문</div>
+      <div class="vendor-note">• Inquiry 회신 대기 / 스펙시트 미공유</div>
     </td>
     <td>
       <div class="pipeline-item">
-        <span class="vendor-line"><span class="v-name">삼본전기</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span></span>
+        <span class="vendor-line"><span class="v-name">Nidec(일본)</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span></span>
+        <div class="vendor-note">• Japan Expo 신규 / 제품군 다양성 x</div>
+      </div>
+      <div class="pipeline-item">
+        <span class="vendor-line"><span class="v-name">Westmag(미국)</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span></span>
+        <div class="vendor-note">• NDAA-compliant / 이메일 발송 완료</div>
+      </div>
+      <div class="pipeline-item">
+        <span class="vendor-line"><span class="v-name">남양 모터</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span></span>
       </div>
     </td>
     <td class="conclusion">
-      모터이엔지 스왈로 PASS 확인. <span class="next">SOMA 포함 나머지 플랫폼 통과 시 75%+ 승급.</span>
+      모터이엔지 75% 확보. SOMA 테스트 홀드 중. <span class="next">Nidec(Japan Expo)·Westmag(NDAA) 신규 리드 확보.</span>
     </td>
   </tr>
 
@@ -313,13 +513,18 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     </td>
     <td><div class="vendor-empty">— 컨택 업체 없음 —</div></td>
     <td><div class="vendor-empty">—</div></td>
-    <td><div class="vendor-empty">미기재</div></td>
+    <td>
+      <div class="pipeline-item">
+        <span class="vendor-line"><span class="v-name">Nidec(일본)</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span></span>
+        <div class="vendor-note">• 모터+ESC 겸용 / Japan Expo 신규</div>
+      </div>
+    </td>
     <td class="conclusion">
-      <span class="risk">컨택 0건.</span> <span class="next">별도 소싱 트랙 필요.</span>
+      <span class="risk">컨택 0건.</span> <span class="next">Nidec 리드 발굴 단계. 별도 소싱 트랙 필요.</span>
     </td>
   </tr>
 
-  <!-- FC ★ 이번 주 신규 진입 -->
+  <!-- FC -->
   <tr>
     <td class="cat-cell">
       <span class="cat-strip yellow"></span>
@@ -332,18 +537,27 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">다온INC</span><span class="v-sep">|</span><span class="v-stage">미팅 완료</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span>
+        <span class="v-name">다온 Inc</span><span class="v-sep">|</span><span class="v-stage">미팅 완료</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
       </div>
-      <div class="vendor-note">• 5/29 광명 방문. PX4 기반 FC + KCMVP 암호화. NDA·견적 발송 대기 중</div>
+      <div class="vendor-note">• FC 오픈소스 개발 / Sample Inquiry(Viper) 단계 진입</div>
     </td>
-    <td><div class="vendor-empty">—</div></td>
     <td>
+      <div class="vendor-line">
+        <span class="v-name">Wistron(대만)</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
+      </div>
+      <div class="vendor-note">• Japan Expo 신규 / Qualcomm 칩·AI board</div>
+    </td>
+    <td>
+      <div class="pipeline-item">
+        <span class="vendor-line"><span class="v-name">쿼터니언</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span></span>
+      </div>
       <div class="pipeline-item dead">
         <span class="vendor-line"><span class="v-name">드론알씨랜드</span><span class="v-sep">|</span><span class="v-stage">종료</span><span class="v-sep">|</span><span class="v-judgment j0">0%</span></span>
+        <div class="vendor-note">• FC 자체개발 x</div>
       </div>
     </td>
     <td class="conclusion">
-      🔴→🟡 전환. <span class="next">NDA·견적 수령 후 Gate 2 진입. 외산 FC 대비 안정성 검증 필수.</span>
+      <span class="upgrade">🔴→🟡</span> 다온 Inc 미팅 완료 진입. <span class="next">Viper 샘플 Inquiry 진행. Wistron 후속 컨택 필요.</span>
     </td>
   </tr>
 
@@ -355,23 +569,28 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     </td>
     <td><span class="pill yellow">🟡 검토</span></td>
     <td class="review-cell">
-      <div class="review-num">1</div>
+      <div class="review-num">2</div>
       <div class="review-label">컨택 업체</div>
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">다산카본</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span>
+        <span class="v-name">다산카본</span><span class="v-sep">|</span><span class="v-stage">미팅 완료</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
       </div>
-      <div class="vendor-note">• 5/13 김해 방문 완료. 샘플 Inquiry 작성(5/15)</div>
+      <div class="vendor-note">• 밥스 대비 가격↓ / 대량 주문 이슈 — 보류</div>
     </td>
-    <td><div class="vendor-empty">—</div></td>
+    <td>
+      <div class="vendor-line">
+        <span class="v-name">BOBs</span><span class="v-sep">|</span><span class="v-stage">미팅 완료</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
+      </div>
+      <div class="vendor-note">• TOV 기준 금형 프레임 3천만원 수준</div>
+    </td>
     <td>
       <div class="pipeline-item dead">
-        <span class="vendor-line"><span class="v-name">ASTK</span><span class="v-sep">|</span><span class="v-stage">종료</span><span class="v-sep">|</span><span class="v-judgment j0">0%</span></span>
+        <span class="vendor-line"><span class="v-name">ASTK (아스트)</span><span class="v-sep">|</span><span class="v-stage">종료</span><span class="v-sep">|</span><span class="v-judgment j0">0%</span></span>
       </div>
     </td>
     <td class="conclusion">
-      다산카본 단일 의존. <span class="next">카본 적층 자체설비 보유 여부가 75%+ 게이트.</span>
+      두 업체 모두 50% — <span class="next">추가 카본 업체 비교 후 결정 예정.</span>
     </td>
   </tr>
 
@@ -388,27 +607,35 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">JRK Vision</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
+        <span class="v-name">Canlab</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
       </div>
-      <div class="vendor-note">• G8N 1ea 7월 전 도착. KC 진행 중 / FCC·CE 7월 예정</div>
+      <div class="vendor-note">• IR 카메라 USB-C 교체 / EO 샘플 7월 생산</div>
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">EOST</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span>
+        <span class="v-name">JRK Vision</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
       </div>
-      <div class="vendor-note">• SOMA용 200g급 EO. 5~6월 샘플 2대 확보 예정</div>
+      <div class="vendor-note">• G8N 싱글 대금 지급 완료 / 7월 전 샘플 도착 목표</div>
     </td>
     <td>
       <div class="pipeline-item">
-        <span class="vendor-line"><span class="v-name">Canlab</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span></span>
-        <div class="vendor-note">• IR 카메라 USB-C 교체 / 샘플 EO 7월 생산</div>
+        <span class="vendor-line"><span class="v-name">Gremsy(베트남)</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span></span>
+        <div class="vendor-note">• Japan Expo 신규 / Lynx 모델 우선 고려</div>
       </div>
       <div class="pipeline-item">
-        <span class="vendor-line"><span class="v-name">그린광학</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span></span>
+        <span class="vendor-line"><span class="v-name">Global Systems</span><span class="v-sep">|</span><span class="v-stage">미팅 완료</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span></span>
+        <div class="vendor-note">• 짐벌 라인업 부재 — Closed</div>
+      </div>
+      <div class="pipeline-item dead">
+        <span class="vendor-line"><span class="v-name">EOST (이오시스템)</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span></span>
+        <div class="vendor-note">• 회신 Lost — 드롭 예정</div>
+      </div>
+      <div class="pipeline-item">
+        <span class="vendor-line"><span class="v-name">그린 광학</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span></span>
       </div>
     </td>
     <td class="conclusion">
-      JRK·EOST·Canlab 병행. <span class="next">MAVLink 통합 레벨 확정이 PoC 진입 조건.</span>
+      Canlab IR + JRK Vision EO 병행. <span class="next">7월 샘플 후 광학 metrics 측정. Gremsy(Japan Expo) 신규 리드 등록.</span>
     </td>
   </tr>
 
@@ -425,27 +652,30 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">우리넷</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
+        <span class="v-name">우리넷</span><span class="v-sep">|</span><span class="v-stage">미팅 완료</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
       </div>
-      <div class="vendor-note">• Gate1 Pass. WD-L700K(KT)+WD-L700S(SKT) 각 1EA 발주 확정 / 6/24 공급</div>
+      <div class="vendor-note">• WD-L700K/S 각 1EA 발주 확정 / Jetson 연동 실측 대기</div>
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">스마티</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span>
+        <span class="v-name">스마티</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
       </div>
-      <div class="vendor-note">• 5G 모듈 기존 사용 중. 우리넷과 1:1 대체 검증 예정</div>
+      <div class="vendor-note">• 5G 모듈 12개 주문 / 안테나 헐거움 이슈</div>
     </td>
     <td>
       <div class="pipeline-item">
-        <span class="vendor-line"><span class="v-name">RF Core</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span></span>
-        <div class="vendor-note">• RFFE 부분공급 가능성. Gate 2 확정 대기</div>
+        <span class="vendor-line"><span class="v-name">RF Core</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span></span>
+        <div class="vendor-note">• C2 프로토 대여 요청 단계 / 7월 수령, 영상전송 불가 확정</div>
       </div>
       <div class="pipeline-item dead">
-        <span class="vendor-line"><span class="v-name">쿠오핀</span><span class="v-sep">|</span><span class="v-stage">종료</span><span class="v-sep">|</span><span class="v-judgment j0">0%</span></span>
+        <span class="vendor-line"><span class="v-name">쿠오핀</span><span class="v-sep">|</span><span class="v-stage">종료</span><span class="v-sep">|</span><span class="v-judgment j25">25%</span></span>
+      </div>
+      <div class="pipeline-item dead">
+        <span class="vendor-line"><span class="v-name">TOBs / 스마트레이더</span><span class="v-sep">|</span><span class="v-stage">리드/부적합</span></span>
       </div>
     </td>
     <td class="conclusion">
-      우리넷 Gate1 Pass, 샘플 발주 확정. <span class="next">Jetson USB 통합 실측이 Gate2 통과 조건.</span>
+      우리넷 발주 확정(LTE). <span class="next">RF Core C2 트랙 7월 프로토 → 8~9월 FC 연동 평가.</span>
     </td>
   </tr>
 
@@ -462,19 +692,18 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">비스타컴</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j75">75%</span>
+        <span class="v-name">비스타컴</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j100">100%</span>
       </div>
-      <div class="vendor-note">• 모듈 임대 (4/22~7/30) / 테스트 진행 중</div>
+      <div class="vendor-note">• 모듈 샘플 임대 (4/22~7/30) / 적합 확인 완료</div>
     </td>
     <td><div class="vendor-empty">—</div></td>
     <td>
       <div class="pipeline-item">
-        <span class="vendor-line"><span class="v-name">Synerex</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span></span>
-        <div class="vendor-note">• backup 후보</div>
+        <span class="vendor-line"><span class="v-name">시너렉스</span><span class="v-sep">|</span><span class="v-stage">리드 발굴</span></span>
       </div>
     </td>
     <td class="conclusion">
-      비스타컴 75% 달성. <span class="next">Synerex backup 컨택으로 dual-source 확보 권장.</span>
+      비스타컴 100% 달성. <span class="next">샘플 반납 준비 → 양산 계약 단계.</span>
     </td>
   </tr>
 
@@ -491,14 +720,14 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     </td>
     <td>
       <div class="vendor-line">
-        <span class="v-name">Silent Sky</span><span class="v-sep">|</span><span class="v-stage">샘플 Inquiry</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
+        <span class="v-name">Silent Sky</span><span class="v-sep">|</span><span class="v-stage">샘플 테스트</span><span class="v-sep">|</span><span class="v-judgment j50">50%</span>
       </div>
-      <div class="vendor-note">• 7개 플랫폼 미팅 완료. Final Quotation 수령. 최소 13° pitch</div>
+      <div class="vendor-note">• 7인치 프롭 (새나·재현) 테스트 진행 중</div>
     </td>
     <td><div class="vendor-empty">—</div></td>
     <td><div class="vendor-empty">단일 업체</div></td>
     <td class="conclusion">
-      단독 트랙. <span class="next">backup 1곳 리드 발굴 필요.</span>
+      단독 트랙. <span class="next">7인치 프롭 테스트 결과로 등급 결정.</span>
     </td>
   </tr>
 
@@ -525,81 +754,97 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 </table>
 </section>
 
-<!-- WEEKLY ACTION REVIEW -->
+<!-- ====================== WEEKLY ACTION REVIEW ====================== -->
 <section class="war-section">
   <h2 class="war-header">
     Weekly Action Review
-    <div class="war-subtitle">W22 · 2026-05-25 → 2026-05-31</div>
+    <div class="war-subtitle">W24 · 2026-06-08 → 2026-06-14</div>
   </h2>
+
   <div class="war-grid">
 
-    <!-- 전 주 대비 핵심 변동 -->
+    <!-- 1. 전 주 대비 핵심 변동 사항 -->
     <div class="war-block">
       <h3>전 주 대비 핵심 변동 사항</h3>
       <ul class="war-list">
         <li>
-          <span class="tag new">NEW</span><span class="date">05-29</span>
-          <span class="name">[다온INC] FC 광명 방문</span> — 완료
-          <div class="summary">PX4·KCMVP 보유. FC 부품군 첫 컨택 → 🔴 Critical Gap 해소</div>
+          <span class="tag new">NEW</span><span class="date">06-08</span>
+          <span class="name">Japan Expo 신규 벤더 3종 등록</span>
+          <div class="summary">Gremsy(짐벌), Wistron(FC), Nidec(모터+ESC) — 리드 발굴 단계 진입</div>
         </li>
         <li>
-          <span class="tag new">NEW</span><span class="date">05-28</span>
-          <span class="name">[우리넷] 샘플 Inquiry</span> — 완료
-          <div class="summary">Gate1 Pass. WD-L700K/S 각 1EA 발주 확정 (6/24 공급)</div>
+          <span class="tag new">NEW</span><span class="date">06-08</span>
+          <span class="name">[Westmag] 사전조사 + 이메일 발송</span>
+          <div class="summary">미국 NDAA-compliant 모터 벤더 / 회신 대기 중</div>
         </li>
         <li>
-          <span class="tag new">NEW</span>
-          <span class="name">[EOST] 샘플 Inquiry</span> — 재개
-          <div class="summary">SOMA용 200g급 EO 짐벌. 5~6월 샘플 2대 확보 예정</div>
+          <span class="tag status">상태 변경</span><span class="date">05-31</span>
+          <span class="name">[다온 Inc] FC 미팅 완료</span> — 🔴→🟡
+          <div class="summary">FC Under Review 첫 진입 / Viper 모델 Sample Inquiry 단계</div>
         </li>
         <li>
-          <span class="tag dead">DEL</span><span class="date">05-26</span>
-          <span class="name">[자인에너지] 배터리</span> — 부적합 확정
-          <div class="summary">C-rate 미달. Under Review에서 제외</div>
+          <span class="tag status">상태 변경</span><span class="date">06-08</span>
+          <span class="name">[RF Core] 2차 RFI 회신 수령</span>
+          <div class="summary">C2 프로토타입 대여 요청 단계 전환 / 영상전송 불가 확정(27년 Q3)</div>
         </li>
         <li>
-          <span class="tag carry">Carry</span><span class="date">05-25</span>
+          <span class="tag complete">완료</span><span class="date">05-28</span>
+          <span class="name">[우리넷] 샘플 발주 확정</span>
+          <div class="summary">WD-L700K(KT) + WD-L700S(SKT) 각 1EA / 6/24 공급 예정</div>
+        </li>
+        <li>
+          <span class="tag carry">Carry</span><span class="date">05-22</span>
           <span class="name">[JRK Vision] 샘플 Inquiry</span> — 진행 중
-          <div class="summary">G8N 1ea 임대 협의. 7월 전 도착 예정</div>
+          <div class="summary">G8N 대금 지급 완료 / 7월 전 샘플 도착 목표</div>
+        </li>
+        <li>
+          <span class="tag status">상태 변경</span><span class="date">05-31</span>
+          <span class="name">[모터이엔지] 샘플 테스트</span> — 진행 중→홀드
+          <div class="summary">SOMA 기체 이슈로 테스트 delayed</div>
+        </li>
+        <li>
+          <span class="tag carry">Carry</span><span class="date">05-26</span>
+          <span class="name">[에너테크] 샘플 테스트</span> — 예정 유지
+          <div class="summary">6/10 FFT 테스트 (Enertech vs BEI head-to-head)</div>
         </li>
       </ul>
     </div>
 
-    <!-- 이번 주 Action Items -->
+    <!-- 2. 이번 주 주요 action item -->
     <div class="war-block">
       <h3>이번 주 주요 Action Item</h3>
       <ul class="war-list">
         <li>
-          <span class="date">05-28</span>
-          <span class="name">우리넷 · 통신모듈</span> — 샘플 Inquiry (완료)
-          <div class="summary">WD-L700K/S 발주 확정. 사업자등록증 송부 → 견적 수령</div>
+          <span class="date">06-08</span>
+          <span class="name">Westmag · 모터</span> — 이메일 발송 완료 (진행 중)
+          <div class="summary">NDAA 트랙 미국 벤더 / 스펙시트·MOQ·샘플 절차 회신 대기</div>
         </li>
         <li>
-          <span class="date">05-29</span>
-          <span class="name">다온INC · FC</span> — 광명 방문 2PM (완료)
-          <div class="summary">FC 기술 협력 미팅. NDA·견적 발송 대기</div>
+          <span class="date">06-08</span>
+          <span class="name">RF Core · 통신모듈</span> — 2차 회신 수령 완료 (진행 중)
+          <div class="summary">C2 프로토타입 대여 요청 메일 발송 단계 (1~2ea, 7월 초 수령 목표)</div>
         </li>
         <li>
-          <span class="date">~05-31</span>
-          <span class="name">JRK Vision · 짐벌카메라</span> — 샘플 Inquiry (진행 중)
-          <div class="summary">G8N 1ea 임대 우선 협의. Protocol 매뉴얼 수령 대기</div>
+          <span class="date">06-10</span>
+          <span class="name">에너테크 · 배터리</span> — FFT 테스트 예정
+          <div class="summary">Enertech vs BEI head-to-head / 스왈로 & 토브 탑재</div>
         </li>
       </ul>
     </div>
 
-    <!-- 다음 주 일정 -->
+    <!-- 3. 다음 주에 다가오는 일정 -->
     <div class="war-block">
       <h3>다음 주에 다가오는 일정</h3>
       <ul class="war-list">
         <li>
-          <span class="tag schedule">예정</span><span class="date">06-24</span>
-          <span class="name">[우리넷] WD-L700K(KT) 공급</span>
-          <div class="summary">WD-L700S(SKT)는 즉시 출하 가능. Jetson USB 통합 실측 진입</div>
+          <span class="summary" style="color:var(--text-muted); font-style:italic;">
+            ※ Notion 기준 W25 (6/15~6/21) 등록된 마감 일정 없음
+          </span>
         </li>
         <li>
-          <span class="summary" style="color:var(--text-muted); font-style:italic;">
-            ※ Notion 기준 W23 (6/1~6/7) 등록된 마감 일정은 위 1건 외 없음
-          </span>
+          <span class="tag schedule">예정</span><span class="date">06-24</span>
+          <span class="name">[우리넷] WD-L700K(KT) 공급</span>
+          <div class="summary">WD-L700S는 즉시 출하 완료 / KT향 모델 6/24 공급 예정</div>
         </li>
       </ul>
     </div>
@@ -608,7 +853,7 @@ table.matrix { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 </section>
 
 <div class="footer-note">
-  Source of Truth: Notion 업체 DB · 액션 아이템 DB · Bone Robotics 드론 부품 국산화 TF · W22 (2026-05-25 → 2026-05-31)
+  Source of Truth: Notion 업체 DB · 액션 아이템 DB · Bone Robotics 드론 부품 국산화 TF · W24 (2026-06-08 → 2026-06-14)
 </div>
 
 </body>
