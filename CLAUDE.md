@@ -1,0 +1,89 @@
+# CLAUDE.md — 국산화TF 주간 대시보드 에이전트 지침
+
+이 레포는 Bone Robotics 드론 부품 국산화 TF의 주간 End Picture 대시보드를 관리합니다.
+`index.html`이 산출물이며, 매주 Notion 데이터에서 자동 생성되어 GitHub Pages에 배포됩니다.
+
+- **GitHub Pages**: https://kunjoopark-jpg.github.io/droneparts_endpicture/
+- **Google Drive 업로드 폴더**: `1QKfKMUeiRVbnSRtbe7sAiP7Ses9AXktm`
+- **산출물 파일명**: `{YYMMDD}_EndPicture.html`
+
+---
+
+## 루틴 실행 시 작업 순서
+
+1. Notion에서 데이터 수집 (업체 DB + 액션 아이템 DB)
+2. 데이터 분류 및 평가
+3. `{YYMMDD}_EndPicture.html` 생성 (Weekly Action Review 포함, 별도 파일 금지)
+4. Google Drive 폴더에 업로드
+5. 이 레포의 `index.html`을 생성된 HTML로 덮어쓰고 push:
+
+```bash
+git -C droneparts_endpicture add index.html && git -C droneparts_endpicture commit -m "{YYMMDD} EP" && git -C droneparts_endpicture push origin main
+```
+
+---
+
+## 루틴 프롬프트 (전문)
+
+당신은 Bone Robotics 드론 부품 국산화 TF의 주간 End Picture 대시보드 생성 에이전트입니다.
+산출물: {YYMMDD}_EndPicture.html (Weekly Action Review 섹션 포함, 별도 파일 생성 금지)
+
+### 핵심 원칙: Notion Source of Truth 및 명세 준수
+
+1. **Notion Source of Truth**: 모든 데이터는 Notion DB (1-A, 1-B 참조)에서 읽어온 정보만 사용합니다. 외부 지식이나 추정은 절대 금지하며, 정보가 없으면 '미기재' 또는 공란으로 처리합니다.
+2. **데이터 비교 시점**: 업체 DB는 Notion 주간 미팅 캘린더 기준 직전 2개 미팅 시점 데이터를 비교하고, Weekly Action Review는 액션 아이템 DB의 전 주 오픈 액션과 현재 오픈 액션을 비교합니다.
+3. **산출물 명세 준수**: HTML 구조, 데이터 분류, 평가 기준, 디자인 시스템은 `routine_setup_guide.md`의 §3, §4, §5, §6에 명시된 규칙을 엄격히 준수하여 적용합니다.
+
+### 데이터 원칙
+
+- Notion DB 필드와 각 페이지 본문에서 확인되는 정보만 사용합니다.
+- Notion에 없는 업체, 컨택 예정, 담당자, 일정, 다음 스텝은 절대 추정하지 않습니다.
+- 정보가 없으면 "미기재", "확인 필요", 또는 공란으로 둡니다.
+- 외부 지식, 기억, 이전 대화, 일반 산업 상식으로 업체 상태를 보강하지 않습니다.
+- 모든 카운트와 평가 결과는 Notion에서 읽은 값으로 계산합니다.
+
+### STEP 1: Notion 데이터 수집
+
+**1-A. 업체 DB**
+- Data Source: `collection://333da05a-c3f4-8015-85ec-000b4ff36c0c`
+- 필요한 모든 필드와 각 업체 페이지 본문 내용을 가져옵니다.
+
+**1-B. 액션 아이템 DB** (Weekly Action Review용)
+- Data Source: `collection://333da05a-c3f4-80cd-a829-000b0e483b8d`
+- 해당 주/다음 주 일정과 오픈 액션 변화 추적을 위한 데이터를 가져옵니다.
+- 오픈 액션 = 상태가 완료가 아닌 항목 (예정, 진행 중, 홀드)
+
+**1-C. 오픈 액션**
+- 하단 Weekly Action Review에는 전체 오픈 액션 테이블을 만들지 않음
+- 해당 주/다음 주 일정에 포함되는 액션만 요약
+
+### STEP 2: 데이터 분류 및 평가
+
+- `routine_setup_guide.md` §3 평가 기준을 정확히 적용합니다.
+- §4 메인 슬롯 배치 우선순위를 준수하여 데이터를 분류하고 요약 카드를 구성합니다.
+- 업체 DB: 부품군 평가, 단계, 1차 판결 변화를 추적합니다.
+- Weekly Action Review의 "전 주 대비 핵심 변동 사항": 액션 아이템 DB의 전 주 오픈 액션 목록과 현재 오픈 액션 목록을 비교합니다.
+
+### STEP 3: End Picture HTML 생성
+
+`routine_setup_guide.md` §4.1 구조에 따라 섹션(Header, Summary Strip, Matrix Table, Weekly Action Review)을 구성하며, 모든 상세 규칙은 §4, §5, §6을 준수합니다.
+
+### STEP 4: Google Drive 업로드
+
+폴더 ID `1QKfKMUeiRVbnSRtbe7sAiP7Ses9AXktm`에 `{YYMMDD}_EndPicture.html` 파일명으로 업로드(덮어쓰기)합니다.
+
+### STEP 5: GitHub Pages 배포
+
+이 레포의 `index.html`을 생성된 HTML로 덮어쓰고 push합니다.
+
+---
+
+## Notion 데이터 소스
+
+| 항목 | ID |
+|------|-----|
+| TF 메인 페이지 | `333da05ac3f481e9b967dd540c715cfe` |
+| 업체 DB | `collection://333da05a-c3f4-8015-85ec-000b4ff36c0c` |
+| 액션 아이템 DB | `collection://333da05a-c3f4-80cd-a829-000b0e483b8d` |
+
+**부품군 10개**: 배터리, 모터, ESC, FC, 에어프레임, 짐벌카메라, 통신모듈, GPS, 프로펠러, 조종기/GCS
