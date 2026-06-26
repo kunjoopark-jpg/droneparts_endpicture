@@ -1,7 +1,61 @@
 <!DOCTYPE html>
 
-<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="noindex,nofollow,noarchive" name="robots"/><title>기체별 제원표 - 수집본</title><style>
-:root{--bg:#eef3f8;--card:#fff;--text:#102033;--muted:#64748b;--line:#d5e2ee;--blue:#1f6fb2;--dark:#113d62;--light:#eaf3fb;--soft:#f8fafc}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif}.app{max-width:1680px;margin:0 auto;padding:16px}.nav{position:sticky;top:0;z-index:20;display:flex;gap:8px;flex-wrap:wrap;background:rgba(255,255,255,.98);border:1px solid var(--line);border-radius:14px;padding:10px;box-shadow:0 8px 22px rgba(16,32,51,.08)}.nav button,.tools button{border:1px solid var(--blue);background:#fff;color:var(--dark);border-radius:10px;padding:9px 12px;cursor:pointer;font-weight:900}.nav button.active{background:var(--blue);color:#fff}.tools{display:flex;flex-wrap:wrap;gap:8px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;margin:12px 0}.note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:12px 14px;margin:12px 0;font-weight:800;line-height:1.5}.page{display:none;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 6px 24px rgba(16,32,51,.07)}.page.active{display:block}.page-header{display:flex;justify-content:space-between;gap:18px;background:linear-gradient(135deg,var(--dark),var(--blue));color:#fff;padding:24px 28px}.page-header p{margin:0 0 6px;color:#dbeafe;text-transform:uppercase;font-size:12px;letter-spacing:.12em}.page-header h1{margin:0 0 8px;font-size:30px;letter-spacing:-.03em}.tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;align-content:flex-start}.tags span{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:900}section{margin:18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}section h2{margin:0;background:var(--light);color:#123e63;padding:13px 16px;font-size:18px}section h3{margin:18px 14px 8px;color:#123e63;font-size:16px}.table-wrap{overflow:auto}table{width:100%;min-width:1020px;border-collapse:collapse;font-size:13px}th,td{border:1px solid var(--line);padding:10px;vertical-align:top}th{background:var(--soft);color:#0f3f67;text-align:center}td:first-child{font-weight:900;background:#fbfdff}.components th:nth-child(1){width:145px}.components th:nth-child(2){width:235px}.components th:nth-child(3){width:auto}.components th:nth-child(4){width:210px}.category{font-size:15px;margin-bottom:8px}a{display:inline-block;background:#eaf3fb;color:#0f5d9c;border:1px solid #9cc4e4;border-radius:8px;padding:6px 8px;text-decoration:none;font-weight:900;word-break:break-word}.muted{color:#94a3b8;font-weight:700}.product-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;min-height:165px;padding:10px;text-align:center}.product-card img{width:100%;max-height:210px;object-fit:contain;border-radius:8px;display:block}.product-name{font-weight:900;color:#0f172a;line-height:1.35}.no-photo{width:100%;height:120px;display:grid;place-items:center;border:2px dashed #cbd5e1;border-radius:10px;color:#94a3b8;background:#fff;font-weight:900}.aircraft-photo{padding:16px;max-width:760px}.aircraft-photo .product-card{min-height:320px}.aircraft-photo img{max-height:500px}ul{margin:0;padding-left:18px;line-height:1.55}li{margin:2px 0}td[contenteditable="true"]:focus{outline:2px solid var(--blue);outline-offset:-2px;background:#fff}@media print{body{background:#fff}.nav,.tools,.note{display:none!important}.app{max-width:none;padding:0}.page{display:block!important;break-after:page;box-shadow:none;border:0;border-radius:0}section{break-inside:avoid}.page-header{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="noindex,nofollow,noarchive" name="robots"/><title>기체별 제원표 - 수집본</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/><style>
+:root{
+  --bg:#0f0f11;
+  --card:#16161a;
+  --card2:#1c1c21;
+  --text:#e8e8f0;
+  --muted:#6e6e8a;
+  --line:rgba(255,255,255,0.08);
+  --blue:#5e6ad2;
+  --blue-hover:#6b77e5;
+  --dark:#1a1a2e;
+  --light:rgba(94,106,210,0.12);
+  --soft:#1c1c21;
+  --surface:#111114;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter","Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.app{max-width:1680px;margin:0 auto;padding:16px}
+.nav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;background:rgba(15,15,17,0.92);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:10px;padding:8px;box-shadow:0 4px 24px rgba(0,0,0,0.4)}
+.nav button,.tools button{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:6px;padding:7px 12px;cursor:pointer;font-weight:500;font-size:13px;transition:all .15s;font-family:inherit}
+.nav button:hover{background:rgba(255,255,255,0.06);color:var(--text)}
+.nav button.active{background:var(--blue);color:#fff;border-color:var(--blue);font-weight:600}
+.tools{display:flex;flex-wrap:wrap;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px;margin:10px 0}
+.tools button:hover{background:rgba(255,255,255,0.06);color:var(--text)}
+.note{background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);color:#fbbf24;border-radius:8px;padding:10px 14px;margin:10px 0;font-weight:500;line-height:1.5;font-size:13px}
+.page{display:none;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.page.active{display:block}
+.page-header{display:flex;justify-content:space-between;gap:18px;background:linear-gradient(135deg,#1a1a2e,#16213e);border-bottom:1px solid var(--line);color:#fff;padding:24px 28px}
+.page-header p{margin:0 0 6px;color:var(--muted);text-transform:uppercase;font-size:11px;letter-spacing:.1em;font-weight:500}
+.page-header h1{margin:0 0 8px;font-size:28px;letter-spacing:-.03em;font-weight:700}
+.tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;align-content:flex-start}
+.tags span{background:rgba(94,106,210,0.15);border:1px solid rgba(94,106,210,0.35);border-radius:999px;padding:4px 10px;font-size:11px;font-weight:500;color:#a5b0ff}
+section{margin:16px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+section h2{margin:0;background:rgba(255,255,255,0.03);color:var(--text);padding:12px 16px;font-size:15px;font-weight:600;border-bottom:1px solid var(--line)}
+section h3{margin:16px 14px 8px;color:var(--text);font-size:14px;font-weight:600}
+.table-wrap{overflow:auto}
+table{width:100%;min-width:1020px;border-collapse:collapse;font-size:13px}
+th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top}
+th{background:rgba(255,255,255,0.03);color:var(--muted);text-align:center;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+td:first-child{font-weight:600;background:rgba(255,255,255,0.02);color:var(--text)}
+tr:hover td{background:rgba(255,255,255,0.025)}
+.components th:nth-child(1){width:145px}.components th:nth-child(2){width:235px}.components th:nth-child(3){width:auto}.components th:nth-child(4){width:210px}
+.category{font-size:14px;margin-bottom:8px}
+a{display:inline-block;background:rgba(94,106,210,0.1);color:#a5b0ff;border:1px solid rgba(94,106,210,0.25);border-radius:6px;padding:4px 8px;text-decoration:none;font-weight:500;word-break:break-word;font-size:12px;transition:all .15s}
+a:hover{background:rgba(94,106,210,0.2);border-color:rgba(94,106,210,0.5)}
+.muted{color:var(--muted);font-weight:400}
+.product-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--soft);border:1px solid var(--line);border-radius:10px;min-height:165px;padding:10px;text-align:center}
+.product-card img{width:100%;max-height:210px;object-fit:contain;border-radius:6px;display:block}
+.product-name{font-weight:600;color:var(--text);line-height:1.35;font-size:13px}
+.no-photo{width:100%;height:120px;display:grid;place-items:center;border:1px dashed rgba(255,255,255,0.1);border-radius:8px;color:var(--muted);background:transparent;font-weight:500;font-size:12px}
+.aircraft-photo{padding:16px;max-width:760px}
+.aircraft-photo .product-card{min-height:320px}
+.aircraft-photo img{max-height:500px}
+ul{margin:0;padding-left:18px;line-height:1.55}li{margin:2px 0}
+td[contenteditable="true"]:focus{outline:2px solid var(--blue);outline-offset:-2px;background:rgba(94,106,210,0.05)}
+@media print{body{background:#fff}.nav,.tools,.note{display:none!important}.app{max-width:none;padding:0}.page{display:block!important;break-after:page;box-shadow:none;border:0;border-radius:0}section{break-inside:avoid}.page-header{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
 
 /* 제품 이미지 직접 삽입 기능 */
 .image-tools {
@@ -411,26 +465,26 @@
   .aircraft-flow::before,.aircraft-node::before,.aircraft-node::after{display:none}
 }
 </style></head><body><div class="app"><nav class="nav"><button class="" data-id="saerier">Page 1 새리어</button><button class="" data-id="saena">Page 2 새나</button><button class="" data-id="tov">Page 3 토브</button><button class="" data-id="swallow">Page 4 스왈로</button><button class="active" data-id="soma">Page 5 SOMA</button><button class="" data-id="dmkx">Page 6 DMK-X</button><button data-id="product-common">제품별 보기</button></nav><div class="tools"><button onclick="saveEdits()">입력 내용 저장</button><button onclick="downloadEdited()">수정본 HTML 다운로드</button><button onclick="window.print()">PDF / 인쇄</button>
-<button onclick="downloadHtmlWithCurrentImages()">붙여넣은 이미지 포함 HTML 다운로드</button>
-<button class="primary-save" onclick="downloadFullyEditableHtml()">완전 수정본 HTML 다운로드</button><button onclick="saveAllEdits()">브라우저 저장</button></div><div class="edit-help">수정 기능 강화: 표 안의 모든 텍스트, 제품명, 상세 사양, 제목을 직접 클릭해서 수정할 수 있습니다.
-각 표에는 <b>새 행 추가</b>, 각 행에는 <b>아래 추가 / 복제 / 삭제</b> 기능이 있습니다.
-제품 링크는 <b>링크 수정</b> 버튼으로 바꿀 수 있고, 첨부자료 칸에는 <b>파일 첨부</b> 버튼으로 PDF, 이미지, STEP, 로그 파일 등을 넣을 수 있습니다.
-<b>제품별 보기</b> 탭에서는 제품명 기준으로 사용 기체를 자동 분류해서 볼 수 있습니다.</div>
+<button onclick="downloadHtmlWithCurrentImages()">이미지 포함 HTML 다운로드</button>
+<button class="primary-save" onclick="downloadFullyEditableHtml()">편집본 HTML 다운로드</button><button onclick="saveAllEdits()">브라우저 저장</button></div><div class="edit-help">표 안의 텍스트, 제품명, 사양, 제목은 클릭해 바로 수정할 수 있습니다.
+각 표에서 행을 추가하고, 각 행을 <b>복제·삭제</b>할 수 있습니다.
+제품 링크는 <b>링크 수정</b> 버튼으로 바꾸고, 첨부자료 칸에는 <b>파일 첨부</b> 버튼으로 PDF, 이미지, STEP, 로그 파일 등을 넣을 수 있습니다.
+<b>제품별 보기</b> 탭에서는 제품명 기준으로 사용 기체가 자동 분류됩니다.</div>
 <div class="paste-help">
   사진 복사/붙여넣기 기능: 제품 사진 칸을 한 번 클릭해서 파란 테두리로 선택한 뒤,
   Ctrl+V 또는 Cmd+V로 이미지를 붙여넣으면 해당 제품 칸에 사진이 들어갑니다.
-  이미지 파일을 제품 칸으로 드래그해서 넣는 것도 가능합니다.
+  이미지 파일을 제품 칸에 드래그해 넣을 수도 있습니다.
 </div>
 <div class="image-help">
-  제품 이미지 추가 기능: 각 제품 카드의 <b>이미지 넣기</b> 버튼을 눌러 PC에 있는 제품 사진을 직접 넣을 수 있습니다.
+  각 제품 카드의 <b>이미지 넣기</b> 버튼을 누르면 PC에 있는 사진을 바로 넣을 수 있습니다.
   넣은 이미지는 브라우저에 저장됩니다. 최종본으로 저장할 때는 <b>이미지 포함 HTML 다운로드</b>를 누르세요.
 </div>
-<div class="note">정리 기준: 페이지 하나당 기체 1개만 표시 / 기체 대표 사진에는 기체 사진만 표시 / 모든 구성품 상세, 배터리, 통신, 조종기, RC Module, 링크, 첨부자료는 4번 항목에 통합. 제품 사진은 현재 사용자가 제공한 이미지만 삽입했고, 외부 이미지가 깨지지 않도록 미보유 이미지는 “사진 추가 예정”으로 표시했습니다.</div><main><article class="page" id="product-common">
+<div class="note">기체 1개/페이지 / 대표 사진에는 기체 사진만 / 구성품 상세, 배터리, 통신, 조종기, RC Module, 링크, 첨부자료는 4번 항목에 통합. 보유한 이미지만 표시하고, 미보유 이미지는 “사진 추가 예정”으로 표시했습니다.</div><main><article class="page" id="product-common">
 <header class="page-header">
 <div>
 <p>Product Diagram View</p>
 <h1 contenteditable="true">제품별 적용 기체 다이어그램</h1>
-<div contenteditable="true">제품을 기준으로 어느 기체에 적용되어 있는지 사진 카드 형태로 한눈에 확인하는 페이지</div>
+<div contenteditable="true">기체별 적용 현황을 사진 카드로 한눈에 보는 페이지</div>
 </div>
 <div class="tags"><span>Product</span><span>Aircraft</span><span>Diagram</span></div>
 </header>
