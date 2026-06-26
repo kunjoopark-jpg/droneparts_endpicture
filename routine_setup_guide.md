@@ -244,50 +244,65 @@ Sub-Header: **Weekly Action Review**
 
 ## §6. 디자인 시스템 (CSS 변수)
 
-Light Theme 확정. 어두운 테마 사용 금지.
+Light Theme 확정. 어두운 테마 사용 금지. Vercel 디자인 시스템 참조 적용.
 
 ```css
 :root {
-  /* Base — LIGHT THEME */
-  --bg: #f6f8fb;
-  --surface: #ffffff;
-  --surface2: #f0f3f8;
-  --surface3: #e6ebf2;
-  --border: #d8dee8;
-  --border-light: #e3e8f0;
+  /* ── Surface ── */
+  --bg: #fafafa;          /* page background */
+  --surface: #ffffff;     /* card / table */
+  --surface2: #f5f5f5;    /* inset region */
+  --surface3: #ebebeb;    /* subtle divider fill */
 
-  /* Text */
-  --text: #1a2233;
-  --text-dim: #586377;
-  --text-muted: #8a94a8;
+  /* ── Border (hairline 방식) ── */
+  --border: #ebebeb;
+  --border-strong: #d4d4d4;
 
-  /* Semantic */
-  --green: #0f9d58;          --green-soft: #34c77c;   --green-bg: #e6f7ee;
-  --yellow: #d97706;         --yellow-soft: #f59e0b;  --yellow-bg: #fff4e0;
-  --red: #dc2626;            --red-soft: #ef4444;     --red-bg: #fde7e7;
-  --blue: #1d6fed;           --blue-soft: #3b82f6;    --blue-bg: #e3edff;
+  /* ── Text ── */
+  --text: #171717;        /* ink — primary */
+  --text-dim: #4d4d4d;    /* body */
+  --text-muted: #888888;  /* caption / label */
+
+  /* ── Semantic — 상태 표시 전용, 변경 금지 ── */
+  --green: #0f9d58;   --green-soft: #34c77c;  --green-bg: #e6f7ee;
+  --yellow: #d97706;  --yellow-soft: #f59e0b; --yellow-bg: #fff4e0;
+  --red: #dc2626;     --red-soft: #ef4444;    --red-bg: #fde7e7;
+  --blue: #1d6fed;    --blue-soft: #3b82f6;   --blue-bg: #e3edff;
   --purple: #7c3aed;
   --orange: #ea580c;
-  --accent: #5b6cff;
+  --accent: #171717;  /* CTA — ink */
 
-  /* Gold: 75%+ 업체 j75 강조 전용 */
+  /* ── Gold: 75%+ 업체 j75 강조 전용 ── */
   --gold: #c47e00;
   --gold-bright: #e8a200;
   --gold-bg: #fff4d6;
   --gold-border: #e8c870;
+
+  /* ── Elevation (stacked shadow) ── */
+  --shadow-1: 0 1px 1px rgba(0,0,0,.03), 0 2px 2px rgba(0,0,0,.04);
+  --shadow-2: 0 1px 1px rgba(0,0,0,.03), 0 2px 4px rgba(0,0,0,.05), 0 4px 8px rgba(0,0,0,.04);
+
+  /* ── Radius ── */
+  --radius-sm: 6px;   /* pill / badge */
+  --radius-md: 8px;   /* card */
+  --radius-lg: 12px;  /* table wrapper */
 }
 ```
 
 **폰트**:
-- 본문: `'Noto Sans KR', sans-serif` (300/400/500/700/900)
-- 수치/코드/vendor-line: `'JetBrains Mono', monospace` (400/500/600/700)
-- Google Fonts CDN 사용
+- 본문: `'Inter', 'Noto Sans KR', sans-serif` (400/500/600) — Inter 우선, 한글 Noto KR 폴백
+- 수치/코드/vendor-line: `'JetBrains Mono', monospace` (400/500/600)
+- Google Fonts CDN: `Inter` + `Noto Sans KR` + `JetBrains Mono`
+- Display 텍스트(h1): `font-weight: 600`, `letter-spacing: -0.5px`
+- 본문: `font-weight: 400`, `letter-spacing: -0.1px`
 
 **공통 레이아웃**:
-- body padding: `30px 38px`
-- font-size: `13.5px`, line-height: `1.5`
-- Border-radius: `10px` (card/table wrapper), `6px` (pill/badge)
-- Table header/th: `font-weight: 800` 이상으로 Bold 처리
+- body padding: `32px 40px`
+- font-size: `13.5px`, line-height: `1.6`
+- card/table wrapper: `border-radius: var(--radius-lg)`, `box-shadow: var(--shadow-1)`
+- pill/badge: `border-radius: var(--radius-sm)`
+- Table header/th: `font-weight: 600`, `letter-spacing: 0.3px`, `text-transform: uppercase`, `font-size: 11px`
+- border는 `1px solid var(--border)` 단일 hairline 방식 통일
 - Summary/Matrix의 green/yellow/red 의미와 색상은 항상 동일하게 매칭
 
 ---
