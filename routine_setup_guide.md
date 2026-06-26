@@ -12,7 +12,7 @@ Weekly Action Review는 End Picture 하단 섹션으로 통합합니다.
 |------|-----|
 | 이름 | 국산화TF-주간대시보드 |
 | 스케줄 | 주간 미팅 일정에 따라 매주 조정 필요 |
-| 커넥터 | Notion, Google Drive |
+| 커넥터 | Notion, Google Drive, humanize-korean |
 | 산출물 | `{YYMMDD}_EndPicture.html` |
 | 하단 섹션 | End Picture 내 Weekly Action Review 섹션 |
 | 업로드 폴더 | `1QKfKMUeiRVbnSRtbe7sAiP7Ses9AXktm` |
@@ -328,7 +328,7 @@ Light Theme 확정. 어두운 테마 사용 금지.
 |------|------|
 | 부품군 추가/삭제 | `CLAUDE.md` + §3 표 + §4.1 구조 모두 수정 |
 | Notion 스키마 변경 (필드/옵션) | `CLAUDE.md` 1-A 필드 목록 수정 |
-| Drive 폴더 변경 | §1 표 + `CLAUDE.md` STEP 4 폴더 ID 수정 |
+| Drive 폴더 변경 | §1 표 + `CLAUDE.md` STEP 5 폴더 ID 수정 |
 | 평가 기준 변경 | `CLAUDE.md` 2-B + §3 + §8 이력 수정 (세 곳 모두) |
 | 디자인 변경 | §6 CSS 변수 + §4·§5 양식 명세 수정. 기존 산출물을 reference로 Drive에 보관 |
 | 신규 산출물 추가 | §1·`CLAUDE.md` STEP 추가 + §4·§5 같은 형식으로 새 양식 명세 작성 |

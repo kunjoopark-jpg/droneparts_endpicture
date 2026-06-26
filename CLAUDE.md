@@ -14,8 +14,9 @@
 1. Notion에서 데이터 수집 (업체 DB + 액션 아이템 DB)
 2. 데이터 분류 및 평가
 3. `{YYMMDD}_EndPicture.html` 생성 (Weekly Action Review 포함, 별도 파일 금지)
-4. Google Drive 폴더에 업로드
-5. 이 레포의 `index.html`을 생성된 HTML로 덮어쓰고 push:
+4. HTML 내 한국어 텍스트 윤문 (`/humanize` — AI 투 제거, 의미·수치·코드 불변)
+5. Google Drive 폴더에 업로드
+6. 이 레포의 `index.html`을 생성된 HTML로 덮어쓰고 push:
 
 ```bash
 git -C droneparts_endpicture add index.html && git -C droneparts_endpicture commit -m "{YYMMDD} EP" && git -C droneparts_endpicture push origin main
@@ -68,7 +69,16 @@ git -C droneparts_endpicture add index.html && git -C droneparts_endpicture comm
 
 `routine_setup_guide.md` §4.1 구조에 따라 섹션(Header, Summary Strip, Matrix Table, Weekly Action Review)을 구성하며, 모든 상세 규칙은 §4, §5, §6을 준수합니다.
 
-### STEP 4: Google Drive 업로드
+### STEP 4: HTML 한국어 윤문
+
+생성된 HTML의 한국어 텍스트에 `/humanize`를 실행합니다.
+
+- 대상: HTML 내 화면에 노출되는 한국어 문장 (vendor-note, 결론/리스크, WAR 설명 등)
+- 제외: CSS 클래스명, HTML 태그, 수치, 고유명사, URL, 코드블록
+- 목표: AI 번역투·기계적 병렬 구조 제거, 자연스러운 문체 유지
+- 의미·사실·수치는 절대 변경하지 않는다
+
+### STEP 5: Google Drive 업로드
 
 폴더 ID `1QKfKMUeiRVbnSRtbe7sAiP7Ses9AXktm`에 `{YYMMDD}_EndPicture.html` 파일명으로 업로드(덮어쓰기)합니다.
 
