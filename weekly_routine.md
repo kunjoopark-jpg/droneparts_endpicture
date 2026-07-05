@@ -42,7 +42,7 @@ STEP 1에서 수집한 데이터를 바탕으로 아래 내용을 정리해주�
 
 ### 3-D. 공유 아젠다 (미팅용)
 위 3-A ~ 3-C를 바탕으로 팀 미팅 아젠다를 작성해주세요.
-- Slack #5-1-temporary-communication 채널에 보낼 수 있는 형태로
+- Slack 채널(C0ANMB0F4NS)에 보낼 수 있는 형태로
 - 드래프트로 먼저 보여주세요. 내가 수정한 뒤 발송 지시합니다.
 
 ## STEP 4: GitHub Push
@@ -77,4 +77,4 @@ STEP 1에서 수집한 데이터를 바탕으로 아래 내용을 정리해주�
 - GitHub 레포: https://github.com/kunjoopark-jpg/droneparts_endpicture
 - Drive (샘플테스트 데이터): https://drive.google.com/drive/folders/1Vu3V8p8ZiT1-vwcwN0FF-PpgywjSSFWI
 - Drive (EP 업로드): https://drive.google.com/drive/folders/1QKfKMUeiRVbnSRtbe7sAiP7Ses9AXktm
-- Slack 채널: #5-1-temporary-communication (C0AE96F8J8J)
+- Slack 채널: C0ANMB0F4NS
