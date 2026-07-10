@@ -9,11 +9,15 @@
 ```
 국산화 TF 주간 대시보드 루틴을 실행합니다.
 
-## STEP 1: Notion 데이터 수집
+## STEP 1: 데이터 수집 (Notion + Slack)
 아래 3개 DB에서 최신 데이터를 전부 읽어주세요.
 - 업체 DB: collection://333da05a-c3f4-8015-85ec-000b4ff36c0c
 - 🧪 샘플테스트 DB: collection://0a09a358-d7a4-46f6-b457-858e425b57fc
 - 🎬 액션 아이템 DB: collection://333da05a-c3f4-80cd-a829-000b0e483b8d
+
+Slack #4-1-부품국산화 (C0ANMB0F4NS) 채널의 최근 1주일 메시지를 읽어주세요.
+- 벤더 컨택, 샘플 입고, 테스트 진행, 내부 논의 등 주요 업데이트를 파악합니다.
+- Notion에 아직 반영 안 된 정보가 있으면 STEP 3에서 별도 표기합니다.
 
 ## STEP 2: End Picture HTML 생성
 GitHub 레포의 가이드 파일을 참조하여 HTML을 생성해주세요.
@@ -24,12 +28,13 @@ GitHub 레포의 가이드 파일을 참조하여 HTML을 생성해주세요.
 - index.html로도 복사하여 GitHub Pages 배포
 
 ## STEP 3: 주간 변동 + Next Plan 정리
-STEP 1에서 수집한 데이터를 바탕으로 아래 내용을 정리해주세요.
+STEP 1에서 수집한 Notion + Slack 데이터를 바탕으로 아래 내용을 정리해주세요.
 
 ### 3-A. 전 주 대비 변동 사항
 - 업체 DB: 단계/판정 변경된 벤더
 - 샘플테스트 DB: 상태/결과 변경된 항목
 - 액션 아이템: 완료된 것, 새로 생긴 것
+- Slack: Notion에 미반영된 주요 업데이트 (있으면 "⚠️ Notion 미반영" 태그)
 
 ### 3-B. 이번 주 주요 Action
 - 마감일이 이번 주인 액션 아이템
